@@ -73,7 +73,6 @@ router.get('/:username', async (req, res) => {
   
         const userData = await User.findOne({ where: { username: req.params.username } });
   
-        // check to see if user data was returned
         if(!userData) {
             res.status(404).json({ message: 'No users found with this username'} );
         } else {
